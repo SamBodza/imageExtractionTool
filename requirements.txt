@@ -1,0 +1,3 @@
+pandas
+alive_progress
+numpy

@@ -16,14 +16,15 @@ def mk_dirs(csv: str):
         os.mkdir(fldr_path, mode)
         os.mkdir(os.path.join(fldr_path, 'csv'), mode)
         os.mkdir(os.path.join(fldr_path, 'logs'), mode)
-        if 'NAMESONLY' not in csv:
+        if 'GETNAMES' not in csv:
             os.mkdir(os.path.join(fldr_path, 'images'), mode)
-        if 'PULLONLY' not in csv:
-            if 'NOEXIF' not in csv:
-                os.mkdir(os.path.join(fldr_path, 'logs', 'failed_exif'), mode)
-            if 'NOSAMPLE' not in csv:
-                os.mkdir(os.path.join(fldr_path, 'logs', 'sample_internal'), mode)
-                os.mkdir(os.path.join(fldr_path, 'logs', 'sample_external'), mode)
+            if 'GETIMAGES' not in csv:
+                if 'GETEXIF' in csv:
+                    os.mkdir(os.path.join(fldr_path, 'logs', 'failed_exif'), mode)
+                    os.mkdir(os.path.join(fldr_path, 'logs', 'exif'), mode)
+                if 'GETSAMPLE' in csv:
+                    os.mkdir(os.path.join(fldr_path, 'logs', 'sample_internal'), mode)
+                    os.mkdir(os.path.join(fldr_path, 'logs', 'sample_external'), mode)
 
         log_path = os.path.join(fldr_path, 'logs', f'{name}.logs')
         logger = create_logger(log_path, 'imageExtraction', config['LOGGING']['LOGGING_LEVEL'])

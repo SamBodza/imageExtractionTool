@@ -62,13 +62,13 @@ GETIMAGES
         - csv of path names
         - copy of the images
         
-GETEXIF
+NOSAMPLE
     this returns:
         - csv of path names
         - copy of the images
         - parsed exif data
        
-GETSAMPLE
+NOEXIF
     this returns:
         - csv of path names
         - copy of the images

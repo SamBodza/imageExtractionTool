@@ -5,6 +5,7 @@ from image_paths_to_csv import image_paths_to_csv
 from move_files import move_files
 from get_sample import get_samples
 from find_failed_exif import find_failed_exif
+from clean_known_exif import exif_second_pass
 
 
 def get_names_only(csv: str):
@@ -39,12 +40,16 @@ def get_sample_only(csv: str):
 
 def get_exif_only(csv: str):
     """Gets copy of images and parses exif without taking sample"""
-    logger, fldr_path, paths = get_images_only(csv)
+    logger, fldr_path = get_images_only(csv)
     find_failed_exif(logger, fldr_path)
+    exif_second_pass(logger, fldr_path)
+
+    return logger, fldr_path
 
 
 def full_process(csv: str):
-    pass
+    logger, fldr_path = get_exif_only(csv)
+    get_samples(logger, fldr_path)
 
 
 def process(csv: str):

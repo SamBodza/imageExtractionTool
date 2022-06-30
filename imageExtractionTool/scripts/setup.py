@@ -1,8 +1,8 @@
 import os
 from datetime import datetime
 
-from config_parser import get_config
-from create_logger import create_logger
+from imageExtractionTool.scripts.config_parser import get_config
+from imageExtractionTool.scripts.create_logger import create_logger
 
 
 def mk_dirs(csv: str):
@@ -10,7 +10,7 @@ def mk_dirs(csv: str):
     """
     try:
         config = get_config()
-        mode = config['PERMISSIONS']['folder']
+        mode = 0o666
         name = csv.split('.')[0]
         fldr_path = os.path.join(config['PATHS']['img_dst'], name + '__' + datetime.now().strftime("%Y_%m_%d-%H-%M"))
         os.mkdir(fldr_path, mode)
@@ -33,3 +33,6 @@ def mk_dirs(csv: str):
     except Exception as e:
         print(f'failed to create folders and logger: {e}')
         raise
+
+if __name__ == '__main__':
+    mk_dirs('this_is_a_test.csv')

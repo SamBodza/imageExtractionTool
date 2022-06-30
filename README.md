@@ -81,7 +81,7 @@ CSVs should have:
 	- no headers
 	- one column
 	- filenames must all be in the same form, in one of the below formats:
-		- filestorage://[SERVER]/[PATH]/Img_cee0d57f-b66c-4913-beda-25705b710fee?Full=jpg;Thumbnail=jpg
+		- filestorage://[SERVER]/[PATH]/Img_cee0d57f-b66c-4913-beda-25705b710fee?Full=[EXT];Thumbnail=[EXT]
 		- Img_cee0d57f-b66c-4913-beda-25705b710fee_Full.jpg
 		- Img_cee0d57f-b66c-4913-beda-25705b710fee
 		- cee0d57f-b66c-4913-beda-25705b710fee

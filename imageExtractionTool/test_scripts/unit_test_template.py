@@ -1,8 +1,6 @@
 import unittest
-from unittest.mock import patch
 
 
-# inherits from unittest.TestCase
 class TestTemplate(unittest.TestCase):
 
     @classmethod

@@ -7,12 +7,11 @@ from jpgPostgresConfig.conn import SQLconfig
 from config_parser import get_config
 
 
-
 def extract_path(logger, row):
     """get paths for file names found
     """
     try:
-        path = os.path.join('dst', row.split('\\')[-2], row.split('\\')[-1])
+        path = os.path.join(get_config()['PATHS']['img_dst'], row.split('\\')[-2], row.split('\\')[-1])
         logger.debug(f'got path {path}')
         return path
     except Exception as e:
@@ -37,7 +36,6 @@ def connect_single(logger, SQLconfig, sql, get=False):
         cur.execute(sql)
         if get:
             data = [row for row in cur.fetchall()]
-
 
     except (Exception, psycopg2.DatabaseError) as error:
         logger.error(f'failed to connect to db: {error}')
@@ -69,7 +67,7 @@ def get_file_paths_backup(logger, data: List[str]) -> List[str]:
         return paths
 
     except Exception as e:
-        logger.critical(f'unable to acces backup DB')
+        logger.critical(f'unable to access backup DB')
 
 
 def get_file_paths(logger, data: List[str]) -> List[str]:

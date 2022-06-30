@@ -18,7 +18,7 @@ def get_file_names(logger, csv: str) -> List[str]:
         logger.critical(f'could not read {csv_path} : {e}')
         raise
 
-    if re.match('^filestorage://retinal', df['file_name'][1]):
+    if re.match('^filestorage://.*?Full=[a-zA-Z]{3,4};Thumbnail=[a-zA-Z]{3,4}$', df['file_name'][1]):
         try:
             df['file_name'] = df['file_name'].map(lambda x: f"{x.split('/')[-1].split('?')[0]}_Full.jpg")
             logger.debug(f"example row {df['file_name'][0]}")

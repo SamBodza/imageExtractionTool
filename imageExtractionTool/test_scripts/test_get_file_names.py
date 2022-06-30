@@ -29,11 +29,10 @@ class TestFileNames(unittest.TestCase):
                 ]
 
         for file_name, csv_file in zip(data, CSVs):
-            csv_path = os.path.join(path,csv_file)
+            csv_path = os.path.join(path, csv_file)
             with open(csv_path, "w") as file:
                 writer = csv.writer(file)
                 writer.writerow([file_name])
-
 
     @classmethod
     def tearDownClass(cls):
@@ -41,7 +40,7 @@ class TestFileNames(unittest.TestCase):
         path = get_config()['PATHS']['csv_input']
         for file in os.listdir(path):
             if 'unittest_format_' in file:
-                os.remove(os.path.join(path,file))
+                os.remove(os.path.join(path, file))
 
     def setUp(self):
         """Create logger for Tests and get CSVS"""
@@ -69,8 +68,7 @@ class TestFileNames(unittest.TestCase):
         self.assertEqual(lst[0], self.result)
 
     def test_error_in_format(self):
-        lst = get_file_names(self.logger, 'unittest_format_error.csv')
-        self.assertEqual(lst[0], self.result)
+        self.assertRaises(ValueError, get_file_names, self.logger, 'unittest_format_error.csv')
 
 
 if __name__ == '__main__':

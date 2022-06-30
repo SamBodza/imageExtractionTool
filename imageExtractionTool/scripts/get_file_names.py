@@ -3,7 +3,7 @@ import re
 import pandas as pd
 from typing import List
 
-from config_parser import get_config
+from scripts.config_parser import get_config
 
 
 def get_file_names(logger, csv: str) -> List[str]:

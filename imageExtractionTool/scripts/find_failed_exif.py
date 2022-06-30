@@ -1,7 +1,7 @@
 import os
 import shutil
 from alive_progress import alive_bar
-from get_exif import get_EXIF
+from scripts.get_exif import get_EXIF
 
 
 def find_failed_exif(logger, fldr_path):

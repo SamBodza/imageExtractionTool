@@ -1,4 +1,4 @@
-from configparser import ConfigParser
+from scripts.configparser import ConfigParser
 
 
 def get_config():

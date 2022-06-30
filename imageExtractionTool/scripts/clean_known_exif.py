@@ -1,7 +1,7 @@
 import os
 
-from config_parser import get_config
-from get_exif import get_EXIF
+from scripts.config_parser import get_config
+from scripts.get_exif import get_EXIF
 
 
 def remove_custom_EXIF(logger, fldr_path):

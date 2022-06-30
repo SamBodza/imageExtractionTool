@@ -1,7 +1,7 @@
 import os
 import shutil
 
-from config_parser import get_config
+from scripts.config_parser import get_config
 
 
 def clean_up(logger, fldr_path, csv):

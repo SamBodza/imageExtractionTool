@@ -1,8 +1,8 @@
 import os
 from datetime import datetime
 
-from imageExtractionTool.scripts.config_parser import get_config
-from imageExtractionTool.scripts.create_logger import create_logger
+from scripts.config_parser import get_config
+from scripts.create_logger import create_logger
 
 
 def mk_dirs(csv: str):

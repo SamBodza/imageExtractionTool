@@ -4,7 +4,7 @@ import pandas as pd
 from typing import List
 
 from jpgPostgresConfig.conn import SQLconfig
-from config_parser import get_config
+from scripts.config_parser import get_config
 
 
 def extract_path(logger, row):

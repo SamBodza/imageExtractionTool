@@ -4,7 +4,7 @@ from datetime import datetime
 from alive_progress import alive_bar
 from typing import List
 
-from config_parser import get_config
+from scripts.config_parser import get_config
 
 
 def move_files(logger, fldr_path, paths: List[str]):

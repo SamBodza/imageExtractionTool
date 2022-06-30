@@ -19,10 +19,10 @@ def mk_dirs(csv: str):
         if 'GETNAMES' not in csv:
             os.mkdir(os.path.join(fldr_path, 'images'), mode)
             if 'GETIMAGES' not in csv:
-                if 'GETEXIF' in csv:
+                if 'NOEXIF' not in csv:
                     os.mkdir(os.path.join(fldr_path, 'logs', 'failed_exif'), mode)
                     os.mkdir(os.path.join(fldr_path, 'logs', 'exif'), mode)
-                if 'GETSAMPLE' in csv:
+                if 'NOSAMPLE' not in csv:
                     os.mkdir(os.path.join(fldr_path, 'logs', 'sample_internal'), mode)
                     os.mkdir(os.path.join(fldr_path, 'logs', 'sample_external'), mode)
 

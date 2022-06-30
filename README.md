@@ -91,10 +91,10 @@ CSVs should have:
 
 ### Installation Instructions
 
-# Docker
+**Docker**
 TBF
 
-# On-Prem
+**On-Prem**
 TBF
 
 ---

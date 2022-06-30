@@ -24,7 +24,7 @@ TLDR:
 
 ---
 
-### Instructions
+### Instructions for Use
 
 **Usage**
 ```
@@ -86,6 +86,16 @@ CSVs should have:
 		- Img_cee0d57f-b66c-4913-beda-25705b710fee
 		- cee0d57f-b66c-4913-beda-25705b710fee
 ```
+
+---
+
+### Installation Instructions
+
+# Docker
+TBF
+
+# On-Prem
+TBF
 
 ---
 

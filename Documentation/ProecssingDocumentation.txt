@@ -24,6 +24,4 @@ Documentation for processing steps for jpg extraction tool
 
 8) any images with unusual EXIF are put in a sperate bucket
 
-9)
-
-10)
+9) these images are scraped and a set of the unexpected EXIF data is placed in a text file for manual validation

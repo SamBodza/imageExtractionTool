@@ -1,25 +1,28 @@
 Documentation for processing steps for jpg extraction tool
 
 0) Pre-requisites:
-    - cron job set for midnight daily on server to run python module
     - exiftool installed on sever as CLI tool
     - python >= 3.6
+    - config files have been changed
+    - optional: cron job set for midnight daily on server to run python module
 
-1) all csvs in input folder are found and tool iterates through each CVS
+1) All csvs in input folder are found and tool iterates through each CVS
 
 2) Specific directories are created depending on options given in csv, this example will be for a 'full run'
+    See CSV naming scheme in README for full details
 
-3)
+3) CSV is read in using pandas and file names are converted using regex into same format as in DB
+    See CSV formatting in README for full details
 
-4)
+4) Get stored path to each image from fliename in PostgreSQL DB, fallback to CSV to find paths if connection fails
 
-5)
+5) Move files into output folder
 
-6)
+6) Take random sample from whole extract for ML validation, sample size dictated by ML acc., see working in documentaion
 
-7)
+7) EXIF is scraped and checked for any images that have unusual EXIF data
 
-8)
+8) any images with unusual EXIF are put in a sperate bucket
 
 9)
 

@@ -66,7 +66,7 @@ class TestSetup(unittest.TestCase):
 
     def test_mk_dirs_GETEXIF(self):
         """Test to check only correct directories made"""
-        _, fldr_path = mk_dirs('GETEXIF_unittest.csv')
+        _, fldr_path = mk_dirs('NOSAMPLE_unittest.csv')
         paths = [fldr_path,
                  os.path.join(fldr_path, 'csv'),
                  os.path.join(fldr_path, 'logs'),
@@ -80,7 +80,7 @@ class TestSetup(unittest.TestCase):
 
     def test_mk_dirs_GETSAMPLE(self):
         """Test to check only correct directories made"""
-        _, fldr_path = mk_dirs('GETSAMPLE_unittest.csv')
+        _, fldr_path = mk_dirs('NOEXIF_unittest.csv')
         paths = [fldr_path,
                  os.path.join(fldr_path, 'csv'),
                  os.path.join(fldr_path, 'logs'),

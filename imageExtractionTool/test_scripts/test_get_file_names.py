@@ -1,6 +1,9 @@
 import unittest
 import os
 import csv
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 from imageExtractionTool.scripts.get_file_names import get_file_names
 from imageExtractionTool.scripts.config_parser import get_config

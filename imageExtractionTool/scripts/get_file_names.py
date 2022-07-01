@@ -18,7 +18,9 @@ def get_file_names(logger, csv: str) -> List[str]:
         logger.critical(f'could not read {csv_path} : {e}')
         raise
 
-    if re.match('^filestorage://.*?Full=[a-zA-Z]{3,4};Thumbnail=[a-zA-Z]{3,4}$', df['file_name'][1]):
+    test_row = df['file_name'][0]
+    if re.match('^filestorage://.*?Full=[a-zA-Z]{3,4};Thumbnail=[a-zA-Z]{3,4}$',
+                test_row):
         try:
             df['file_name'] = df['file_name'].map(lambda x: f"{x.split('/')[-1].split('?')[0]}_Full.jpg")
             logger.debug(f"example row {df['file_name'][0]}")
@@ -28,17 +30,18 @@ def get_file_names(logger, csv: str) -> List[str]:
             raise
 
     elif re.match('Img_[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}_Full.jpg',
-                  df['file_name'][1]):
+                  test_row):
         logger.debug(f"example row {df['file_name'][0]}")
         return df['file_name']
 
     elif re.match('Img_[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}',
-                  df['file_name'][1]):
+                  test_row):
         df['file_name'] = df['file_name'].map(lambda x: str(x) + '_Full.jpg')
         logger.debug(f"example row {df['file_name'][0]}")
         return df['file_name']
 
-    elif re.match('[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}', df['file_name'][1]):
+    elif re.match('[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12}',
+                  test_row):
         df['file_name'] = df['file_name'].map(lambda x: 'Img_' + str(x) + '_Full.jpg')
         logger.debug(f"example row {df['file_name'][0]}")
         return df['file_name']

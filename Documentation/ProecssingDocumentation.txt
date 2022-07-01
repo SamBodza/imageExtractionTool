@@ -1,0 +1,26 @@
+Documentation for processing steps for jpg extraction tool
+
+0) Pre-requisites:
+    - cron job set for midnight daily on server to run python module
+    - exiftool installed on sever as CLI tool
+    - python >= 3.6
+
+1) all csvs in input folder are found and tool iterates through each CVS
+
+2) Specific directories are created depending on options given in csv, this example will be for a 'full run'
+
+3)
+
+4)
+
+5)
+
+6)
+
+7)
+
+8)
+
+9)
+
+10)

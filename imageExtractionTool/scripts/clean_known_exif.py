@@ -15,10 +15,10 @@ def remove_custom_EXIF(logger, fldr_path):
 
 
 def get_tags(logger, fldr_path):
+    set_tags = []
     try:
-        with open(os.path.join(fldr_path, 'logs', 'exif_out2.txt')) as f:
+        with open(os.path.join(fldr_path, 'logs', 'exif', 'exif_out2.txt')) as f:
             contents = f.read()
-        set_tags = []
         files = contents.split('========')
         tot = len(files)
         with alive_bar(tot, title='Get Tags Progress') as bar:

@@ -16,6 +16,7 @@ def remove_custom_EXIF(logger, fldr_path):
 
 def get_tags(logger, fldr_path):
     set_tags = []
+    logger.info(os.path.join(fldr_path, 'logs', 'exif', 'exif_out2.txt'))
     try:
         with open(os.path.join(fldr_path, 'logs', 'exif', 'exif_out2.txt')) as f:
             contents = f.read()
@@ -52,5 +53,5 @@ def get_tags(logger, fldr_path):
 
 def exif_second_pass(logger, fldr_path):
     remove_custom_EXIF(logger, fldr_path)
-    get_EXIF(logger, fldr_path, os.path.join('logs', 'failed_exif'), '2')
+    get_EXIF(logger, fldr_path, os.path.join('logs', 'exif' ,'failed_exif'), '2')
     get_tags(logger, fldr_path)

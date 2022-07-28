@@ -1,4 +1,4 @@
-from scripts.setup import mk_dirs
+from scripts.dir_setup import mk_dirs
 from scripts.get_file_names import get_file_names
 from scripts.get_file_paths import get_file_paths
 from scripts.image_paths_to_csv import image_paths_to_csv

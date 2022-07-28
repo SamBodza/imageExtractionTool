@@ -26,6 +26,7 @@ def get_names_only(csv: str):
 def get_images_only(csv: str):
     """pull copy of images from csv"""
     logger, fldr_path, paths = get_names_only(csv)
+    logger.info('moving files')
     move_files(logger, fldr_path, paths)
 
     return logger, fldr_path
@@ -34,6 +35,7 @@ def get_images_only(csv: str):
 def get_sample_only(csv: str):
     """Gets copy of images and takes sample without parsing exif"""
     logger, fldr_path = get_images_only(csv)
+    logger.info('taking sample')
     get_samples(logger, fldr_path)
 
     return logger, fldr_path
@@ -42,7 +44,9 @@ def get_sample_only(csv: str):
 def get_exif_only(csv: str):
     """Gets copy of images and parses exif without taking sample"""
     logger, fldr_path = get_images_only(csv)
+    logger.info('finding failed exif')
     find_failed_exif(logger, fldr_path)
+    logger.info('exif_second_path')
     exif_second_pass(logger, fldr_path)
 
     return logger, fldr_path
@@ -50,7 +54,9 @@ def get_exif_only(csv: str):
 
 def full_process(csv: str):
     logger, fldr_path = get_exif_only(csv)
+    logger.info('getting samples')
     get_samples(logger, fldr_path)
+    logger.info('cleaning up')
     clean_up(logger, fldr_path, csv)
 
 

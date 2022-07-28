@@ -52,6 +52,10 @@ def get_tags(logger, fldr_path):
 
 
 def exif_second_pass(logger, fldr_path):
+    logger.info('1')
     remove_custom_EXIF(logger, fldr_path)
-    get_EXIF(logger, fldr_path, os.path.join('logs', 'exif' ,'failed_exif'), '2')
+    logger.info('2')
+    get_EXIF(logger, fldr_path, os.path.join('logs', 'failed_exif'), '2')
+    logger.info('3')
     get_tags(logger, fldr_path)
+    logger.info('4')

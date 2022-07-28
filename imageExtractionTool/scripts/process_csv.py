@@ -6,6 +6,7 @@ from scripts.move_files import move_files
 from scripts.get_sample import get_samples
 from scripts.find_failed_exif import find_failed_exif
 from scripts.clean_known_exif import exif_second_pass
+from scripts.clean_up import clean_up
 
 
 def get_names_only(csv: str):
@@ -50,17 +51,22 @@ def get_exif_only(csv: str):
 def full_process(csv: str):
     logger, fldr_path = get_exif_only(csv)
     get_samples(logger, fldr_path)
+    clean_up(logger, fldr_path, csv)
 
 
 def process(csv: str):
     """Process CSV"""
     if 'GETNAMES' in csv:
-        get_names_only(csv)
+        logger, fldr_path = get_names_only(csv)
+        clean_up(logger, fldr_path, csv)
     elif 'GETIMAGES' in csv:
-        get_images_only(csv)
+        logger, fldr_path = get_images_only(csv)
+        clean_up(logger, fldr_path, csv)
     elif 'GETEXIF' in csv:
-        get_exif_only(csv)
+        logger, fldr_path = get_exif_only(csv)
+        clean_up(logger, fldr_path, csv)
     elif 'GETSAMPLE' in csv:
-        get_sample_only(csv)
+        logger, fldr_path = get_sample_only(csv)
+        clean_up(logger, fldr_path, csv)
     else:
         full_process(csv)

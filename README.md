@@ -89,16 +89,6 @@ CSVs should have:
 
 ---
 
-### Installation Instructions
-
-**Docker**
-TBF
-
-**On-Prem**
-TBF
-
----
-
 ### Example
 
 for an example of an input of *test.csv*
@@ -138,9 +128,9 @@ in the test__[date] directory there will be 3 more folders:
 ---
 
 ### Future Work
-- [x] get into production 
-- [ ] add DICOM functionality
-- [ ] create docker container for tool
+- [ ] add JPG DICOM functionality
+- [ ] add Heidelberg DICOM functionality
+- [ ] add TOPCON DICOM functionality
 
 ---
 

@@ -2,7 +2,7 @@ from scripts.dir_setup import mk_dirs
 from scripts.get_file_names import get_file_names
 from scripts.get_file_paths import get_file_paths
 from scripts.image_paths_to_csv import image_paths_to_csv
-from scripts.move_files_multithreaded import move_files
+from scripts.move_files_multithreaded2 import move_files
 from scripts.get_sample import get_samples
 from scripts.find_failed_exif import find_failed_exif
 from scripts.clean_known_exif import exif_second_pass

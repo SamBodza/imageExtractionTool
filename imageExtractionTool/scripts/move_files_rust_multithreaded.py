@@ -12,7 +12,7 @@ from scripts.config_parser import get_config
 def save_tmp_file(df):
     id = str(uuid1())
     if not os.path.exists(f'./tmp_{id}.csv'):
-        df.to_csv(f'/tmp/tmp_{id}.csv', header=False)
+        df.to_csv(f'/tmp/tmp_{id}.csv', header=False, index=False)
 
         return f'/tmp/tmp_{id}.csv'
     else:

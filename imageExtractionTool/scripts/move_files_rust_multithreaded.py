@@ -4,13 +4,13 @@ from datetime import datetime
 from typing import List
 from concurrent.futures import ProcessPoolExecutor
 import subprocess
-from uuid import uuid5
+from uuid import uuid1
 
 from scripts.config_parser import get_config
 
 
 def save_tmp_file(df):
-    id = str(uuid5())
+    id = str(uuid1())
     if not os.path.exists(f'./tmp_{id}.csv'):
         df.to_csv(f'/tmp/tmp_{id}.csv')
 

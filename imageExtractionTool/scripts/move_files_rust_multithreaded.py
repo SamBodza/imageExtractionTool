@@ -29,7 +29,7 @@ def copy_files(paths, dst_path, src_path):
 
         subprocess.Popen(f'/home/curator/Dev/toolsProd/csvcopier < {csv_path}', stdout=subprocess.PIPE, stderr=subprocess.PIPE).read()
     except Exception as e:
-        pass
+        print(e)
 
 
 def move_files(logger, fldr_path, paths: List[str]):

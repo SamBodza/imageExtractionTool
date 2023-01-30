@@ -27,7 +27,7 @@ def copy_files(paths, dst_path, src_path):
         df = pd.DataFrame(list(zip(src_p, dst_p)))
         csv_path = save_tmp_file(df)
 
-        subprocess.Popen(f'/home/curator/Dev/toolsProd/csvcopier < {csv_path}', stdout=subprocess.PIPE, stderr=subprocess.PIPE).read()
+        subprocess.Popen(f'/home/librarian-user/Dev/toolsProd/csvcopier < {csv_path}', stdout=subprocess.PIPE, stderr=subprocess.PIPE).read()
     except Exception as e:
         print(e)
 
